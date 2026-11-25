@@ -165,6 +165,9 @@ h1 { font-size: 28px; line-height: 1.25; margin: 18px 0 2px; letter-spacing: -.0
 .btn[aria-pressed="true"] svg { color: var(--gold); }
 h2 { font-size: 18px; margin: 32px 0 10px; }
 .lead { font-size: 16px; }
+.season { display: flex; gap: 10px; align-items: flex-start; margin: 14px 0 0; padding: 10px 14px; border-radius: 12px; background: var(--card); box-shadow: var(--shadow); font-size: 15px; }
+.season svg { color: var(--gold); margin-top: 2px; }
+.season small { display: block; font-size: 12px; color: var(--muted); }
 .overview p { margin: 0 0 10px; }
 .highlights { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
 .highlights li { padding: 4px 10px; border-radius: 8px; background: var(--soft); font-size: 14px; }

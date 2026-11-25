@@ -15,6 +15,19 @@
     if (map.getSource("temple")) map.getSource("temple").setData(templeFeature());
   });
 
+  // ── 공유: 휴대폰은 공유 창, PC는 주소 복사 ────────────────
+  const share = document.getElementById("share");
+  if (share) share.addEventListener("click", async () => {
+    const url = location.href.split("#")[0];
+    const title = share.dataset.title;
+    try {
+      if (navigator.share) { await navigator.share({ title: `${title} | 절따라`, url }); return; }
+      await navigator.clipboard.writeText(url);
+      share.querySelector("span").textContent = "주소를 복사했어요";
+      setTimeout(() => { share.querySelector("span").textContent = "공유"; }, 2000);
+    } catch { /* 공유 창을 닫은 경우 */ }
+  });
+
   // ── 지도 ───────────────────────────────────────────────
   const map = new maplibregl.Map({
     container: "map",
